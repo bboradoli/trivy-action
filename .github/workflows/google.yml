@@ -23,11 +23,11 @@ jobs:
     - name: Checkout
       uses: actions/checkout@v3
 
-    #- uses: docker/login-action@v2
-    #  with:
-    #    registry: asia-northeast3-docker.pkg.dev
-    #    username: _json_key
-    #    password: ${{ secrets.GKE_GSA_KEY }}  
+    - uses: docker/login-action@v2
+      with:
+        registry: asia-northeast3-docker.pkg.dev
+        username: _json_key
+        password: ${{ secrets.GKE_GSA_KEY }}  
 
     # Setup gcloud CLI
     - uses: google-github-actions/setup-gcloud@94337306dda8180d967a56932ceb4ddcf01edae7

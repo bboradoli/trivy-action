@@ -12,6 +12,7 @@ env:
   REPOSITORY: ksh-artifact-repo-gar # TODO: update to Artifact Registry docker repository
   DEPLOYMENT_NAME: helloweb
   IMAGE: hello-app
+  GCP_KEY: ${{ secrets.GKE_GSA_KEY }}
 
 jobs:
   setup-build-publish-deploy:
@@ -38,7 +39,7 @@ jobs:
       uses: 'google-github-actions/setup-gcloud@v1'
 
     - name: 'Default application'
-      run: echo ${{ secrets.GKE_GSA_KEY }}" > ~/.config/gcloud/application_default_credentials.json
+      run: echo "$GCP_KEY" > ~/.config/gcloud/application_default_credentials.json
 
     - uses: docker/login-action@v2
       with:

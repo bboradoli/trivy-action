@@ -52,7 +52,8 @@ jobs:
     - name: Publish
       run: |-
         #docker push "gcr.io/$PROJECT_ID/$IMAGE:$GITHUB_SHA"
-        docker push "$GAR_LOCATION-docker.pkg.dev/$PROJECT_ID/$REPOSITORY/$IMAGE:$GITHUB_SHA"
+        docker push "asia-northeast3-docker.pkg.dev/ksh-pr-test/ksh-artifact-repo-gar/$IMAGE:$GITHUB_SHA"
+        
     # Set up kustomize
     - name: Set up Kustomize
       run: |-

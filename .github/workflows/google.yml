@@ -56,9 +56,8 @@ jobs:
         #  --build-arg GITHUB_REF="$GITHUB_REF" \
         #  .
 
-    - name: docker-credential-gcr
-      run: |-
-        docker-credential-gcr configure-docker --registries=asia-northeast3-docker.pkg.dev
+    - name: Login GCR
+      run: gcloud auth configure-docker
 
 
     #- name: Run Trivy vulnerability scanner

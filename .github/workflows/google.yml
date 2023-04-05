@@ -68,6 +68,9 @@ jobs:
         #  --build-arg GITHUB_REF="$GITHUB_REF" \
         #  .
 
+    - name: '######### Check Print ###########'
+      run: echo "$GAR_LOCATION-docker.pkg.dev/$PROJECT_ID/$REPOSITORY/$IMAGE:latest"
+
     - name: Run Trivy vulnerability scanner
       uses: aquasecurity/trivy-action@master
       with:

@@ -27,13 +27,7 @@ jobs:
     - uses: google-github-actions/setup-gcloud@94337306dda8180d967a56932ceb4ddcf01edae7
       with:
         service_account_key: ${{ secrets.GKE_GSA_KEY }}
-        project_id: ${{ secrets.GKE_PROJECT }}
-        
-    - uses: docker/login-action@v2
-      with:
-        registry: asia-northeast3-docker.pkg.dev
-        username: _json_key
-        password: ${{ secrets.GKE_GSA_KEY }}        
+        project_id: ${{ secrets.GKE_PROJECT }}      
 
     # Configure Docker to use the gcloud command-line tool as a credential
     # helper for authentication
@@ -55,7 +49,13 @@ jobs:
         #  --build-arg GITHUB_SHA="$GITHUB_SHA" \
         #  --build-arg GITHUB_REF="$GITHUB_REF" \
         #  .
-          
+
+    - uses: docker/login-action@v2
+      with:
+        registry: asia-northeast3-docker.pkg.dev
+        username: _json_key
+        password: ${{ secrets.GKE_GSA_KEY }}  
+
     - name: Run Trivy vulnerability scanner
       uses: aquasecurity/trivy-action@master
       with:

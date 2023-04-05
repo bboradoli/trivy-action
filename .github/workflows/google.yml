@@ -74,7 +74,7 @@ jobs:
     - name: Run Trivy vulnerability scanner
       uses: aquasecurity/trivy-action@master
       with:
-        image-ref: "$GAR_LOCATION-docker.pkg.dev/$PROJECT_ID/$REPOSITORY/$IMAGE:latest"
+        image-ref: 'asia-northeast3-docker.pkg.dev/ksh-pr-test/ksh-artifact-repo-gar/hello-app:latest'
         format: 'table'
     #    exit-code: '0'
         ignore-unfixed: true

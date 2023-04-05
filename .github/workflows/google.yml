@@ -60,15 +60,15 @@ jobs:
       run: gcloud auth configure-docker
 
 
-    #- name: Run Trivy vulnerability scanner
-    #  uses: aquasecurity/trivy-action@master
-    #  with:
-    #    image-ref: "$GAR_LOCATION-docker.pkg.dev/$PROJECT_ID/$REPOSITORY/$IMAGE:latest"
-    #    format: 'table'
-    #    #exit-code: '1'
-    #    ignore-unfixed: true
-    #    vuln-type: 'os,library'
-    #    severity: 'CRITICAL,HIGH'
+    - name: Run Trivy vulnerability scanner
+      uses: aquasecurity/trivy-action@master
+      with:
+        image-ref: "$GAR_LOCATION-docker.pkg.dev/$PROJECT_ID/$REPOSITORY/$IMAGE:latest"
+        format: 'table'
+        #exit-code: '1'
+        ignore-unfixed: true
+        vuln-type: 'os,library'
+        severity: 'CRITICAL,HIGH'
 
 
 

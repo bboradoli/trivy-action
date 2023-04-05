@@ -7,7 +7,7 @@ on:
 env:
   PROJECT_ID: ${{ secrets.GKE_PROJECT }}
   GKE_CLUSTER: ksh-gke-cluster
-  GKE_ZONE: asia-northeast3-b
+  GKE_ZONE: asia-northeast3-c
   GAR_LOCATION: asia-northeast3 # TODO: update region of the Artifact Registry
   REPOSITORY: asia-northeast3-docker.pkg.dev/ksh-pr-test/ksh-artifact-repo-gar # TODO: update to Artifact Registry docker repository
   DEPLOYMENT_NAME: deploy-hello-app

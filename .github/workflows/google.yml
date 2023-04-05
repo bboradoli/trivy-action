@@ -67,15 +67,15 @@ jobs:
         #  --build-arg GITHUB_REF="$GITHUB_REF" \
         #  .
 
-    #- name: Run Trivy vulnerability scanner
-    #  uses: aquasecurity/trivy-action@master
-    #  with:
-    #    image-ref: "$GAR_LOCATION-docker.pkg.dev/$PROJECT_ID/$REPOSITORY/$IMAGE:latest"
-    #    format: 'table'
+    - name: Run Trivy vulnerability scanner
+      uses: aquasecurity/trivy-action@master
+      with:
+        image-ref: "$GAR_LOCATION-docker.pkg.dev/$PROJECT_ID/$REPOSITORY/$IMAGE:latest"
+        format: 'table'
     #    exit-code: '0'
-    #    ignore-unfixed: true
-    #    vuln-type: 'os,library'
-    #    severity: 'CRITICAL,HIGH'
+        ignore-unfixed: true
+        vuln-type: 'os,library'
+        severity: 'CRITICAL,HIGH'
 
 
 

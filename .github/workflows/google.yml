@@ -9,7 +9,7 @@ env:
   GKE_CLUSTER: ksh-gke-cluster
   GKE_ZONE: asia-northeast3
   GAR_LOCATION: asia-northeast3 # TODO: update region of the Artifact Registry
-  REPOSITORY: ksh-artifact-repo-gar # TODO: update to Artifact Registry docker repository
+  REPOSITORY: ksh-artifact-repo-gar/hello-app # TODO: update to Artifact Registry docker repository
   DEPLOYMENT_NAME: deploy-hello-app
   IMAGE: hello-app
 

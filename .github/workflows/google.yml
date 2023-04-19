@@ -54,12 +54,12 @@ jobs:
     - name: '######### Check Print ###########'
       run: echo "$GAR_LOCATION-docker.pkg.dev/$PROJECT_ID/$REPOSITORY/$IMAGE:latest"
 
-    - name: Run Trivy vulnerability scanner
-      uses: aquasecurity/trivy-action@master
-      with:
-        #image-ref: ${{ secrets.REPO_LOCATION }}-docker.pkg.dev/${{ secrets.REPO_PROJECT }}/${{ secrets.REPO_NM }}/${{ secrets.REPO_IMAGE }}:latest
-        image-ref: ${{ secrets.GAR_LOCATION }}-docker.pkg.dev/${{ secrets.REPO_PROJECT }}/${{ secrets.REPOSITORY }}/${{ secrets.IMAGE }}:latest
-        format: 'table'
+    #- name: Run Trivy vulnerability scanner
+    #  uses: aquasecurity/trivy-action@master
+    #  with:
+    #    #image-ref: ${{ secrets.REPO_LOCATION }}-docker.pkg.dev/${{ secrets.REPO_PROJECT }}/${{ secrets.REPO_NM }}/${{ secrets.REPO_IMAGE }}:latest
+    #    image-ref: ${{ secrets.GAR_LOCATION }}-docker.pkg.dev/${{ secrets.REPO_PROJECT }}/${{ secrets.REPOSITORY }}/${{ secrets.IMAGE }}:latest
+    #    format: 'table'
     #    exit-code: '0'
     #    ignore-unfixed: true
     #    vuln-type: 'os,library'

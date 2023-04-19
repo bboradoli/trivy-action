@@ -9,10 +9,11 @@ env:
   GKE_CLUSTER: ksh-gke-cluster
   GKE_ZONE: asia-northeast3
   GAR_LOCATION: asia-northeast3 # TODO: update region of the Artifact Registry
-  REPOSITORY: ksh-artifact-repo-gar # TODO: update to Artifact Registry docker repository
-  DEPLOYMENT_NAME: helloweb
+  # REPOSITORY: ksh-artifact-repo-gar # TODO: update to Artifact Registry docker repository
+  REPOSITORY: trivy-repo # TODO: update to Artifact Registry docker repository
+  # DEPLOYMENT_NAME: helloweb
   IMAGE: hello-app-repo-ksh
-  GCP_KEY: ${{ secrets.GKE_GSA_KEY }}
+  # GCP_KEY: ${{ secrets.GKE_GSA_KEY }}
 
 jobs:
   setup-build-publish-deploy:

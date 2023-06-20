@@ -34,7 +34,7 @@ jobs:
       uses: 'google-github-actions/auth@v1'
       with:
         token_format: 'access_token'
-        workload_identity_provider: 'projects/110717590588/locations/global/workloadIdentityPools/trivy-action-pool/providers/sangho-github-provider'
+        workload_identity_provider: 'projects/110717590588/locations/global/workloadIdentityPools/trivy-action-pool/providers/cd-provider'
         service_account: 'trivy-action-cd@beha-system.iam.gserviceaccount.com'
         audience: 'https://github.com/bboradoli/trivy-action'
         
